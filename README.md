@@ -15,10 +15,10 @@
 
 （你可以使用下面的终端命令（terminal command），或者在任何文本编辑器中创建和编辑该文件——这无关紧要。）
 
-(main)$ touch chapter-1.txt
+```(main)$ touch chapter-1.txt
 (main)$ echo "Chapter 1 - The Beginning" >> chapter-1.txt
 (main)$ cat chapter-1.txt
-Chapter 1 - The Beginning
+Chapter 1 - The Beginning```
 上面的命令用 touch 创建了一个名为 chapter-1.txt 的新文件，用 echo 和 >> 操作符插入句子“第一章——开端”，并且为了检查我们的工作，用 cat 现实文件内容。
 
 结果是一个里面有一句话的简单文本文件。
