@@ -5,9 +5,9 @@
 如果出现错误正克隆到 ‘vulstudy’… fatal: 无法访问
 尝试执行：
 
-git config --global --unset http.proxy
+```git config --global --unset http.proxy```
 或
-git config --global --unset https.proxy
+```git config --global --unset https.proxy```
 ## Git 分支（branch）
   这个 (main) 意味着我们现在位于一个叫做 main 的 分支 上。你可以把一个 Git 分支看作是项目 在某一特定时间点 的副本，可以独立于其他分支进行修改。
 ## 如何做出我们的第一次提交（commit）
@@ -25,7 +25,7 @@ Chapter 1 - The Beginning
 
 让我们再次运行 git status ，看看它的输出有什么不同：
 
-(main)$ git status
+```(main)$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -33,15 +33,15 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
         chapter-1.txt
 
-nothing added to commit but untracked files present (use "git add" to track)
+nothing added to commit but untracked files present (use "git add" to track)```
 在这里我们看到一个与之前不同的输出结果。我们看到一个描述“未跟踪文件（untracked file）”的部分，我们的新文件 chapter-1.txt 被列在那里。
   在 Git 开始跟踪（track）一个文件的变化之前，我们首先需要告诉 Git 去跟踪它——正如消息底部所显示的——我们可以用 git add 来实现：
 
-(main)$ git add chapter-1.txt
+```(main)$ git add chapter-1.txt```
 （除了为 git add 制定文件名外，你可以使用（.）来添加目录中的所有修改）。
   让我们再检查一下状态：
 
-(main)$ git status
+```(main)$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -49,7 +49,7 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         new file:   chapter-1.txt
 
-john:~/code/practical-git-tutorial (main)$
+john:~/code/practical-git-tutorial (main)$```
   要提交我们的修改，必须先用 git add 把它们添加到 缓存区（staging area） 。
   接下来，我们需要 git commit 来最终完成提交。
   最佳实践是提供一个详细的信息，说明你做了 那些修改 ——更重要的是——你 为什么 要提交这些修改。
@@ -62,7 +62,7 @@ john:~/code/practical-git-tutorial (main)$
 我们目前在本地的 main 分支上，所以我们需要告诉 GitHub 用我们的新提交来更新它自己的 main 。
 
 我们使用 git push 命令做到这一点，我们可以指定 我们要推送到哪里 以及 我们要推送到哪个分支。注意，github更新了推送的安全机制，登录的时候密码是你在github上面生成的token
-  (main)$ git push origin main
+  ```(main)$ git push origin main
 Enumerating objects: 4, done.
 Counting objects: 100% (4/4), done.
 Delta compression using up to 16 threads
@@ -70,6 +70,6 @@ Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To github.com:johnmosesman/practical-git-tutorial.git
-   2592324..a8f8b95  main -> main
+   2592324..a8f8b95  main -> main```
 这里我们推送到 origin 远端（GitHub）的 main 分支。
 输出结果告诉我们 Git 为此所做的一些文件操作，最后一行告诉我们它推送了哪些提交，推送到了哪里。
